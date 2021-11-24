@@ -2,6 +2,14 @@
 Functions for creating arxiv dataset
 """
 import json
+import pandas as pd
+
+ID_KEY = "id"
+AUTHORS_KEY = "authors"
+TITLE_KEY = "title"
+CAT_KEY = "categories"
+ABSTRACT_KEY = "abstract"
+UPDATE_DT_KEY = 'update_date'
 
 CATEGORY_DICT = {
     "cs.AI": "Artificial Intelligence",
@@ -85,3 +93,26 @@ def create_set_for_category_dict(input_path, category_dict,
                     data_list.append(article)
 
     return data_list
+
+
+def create_arxiv_df(arxiv_dicts):
+    """
+    Convert list of json articles to pd DataFrame
+    :param arxiv_dicts: list of dict where each dict is article
+    :return: pd DataFrame
+    """
+    data_list = []
+    for article in arxiv_dicts:
+        id = article[ID_KEY]
+        authors = article[AUTHORS_KEY]
+        title = article[TITLE_KEY]
+        categories = article[CAT_KEY]
+        abstract = article[ABSTRACT_KEY]
+        update_dt = article[UPDATE_DT_KEY]
+        data_list.append([id, authors, title,
+                          categories, abstract, update_dt])
+
+    category_df = pd.DataFrame(data_list,
+                               columns=['id', 'authors', 'title',
+                                        'categories', 'abstract', 'update_dt'])
+    return category_df
