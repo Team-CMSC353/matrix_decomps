@@ -1,5 +1,7 @@
 # large data resources
-arxiv-metadata-oai-snapshot.json
+core/resources/arxiv-metadata-oai-snapshot.json
+full_data_by_category.json
+full_data_by_category.json.bz2
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
