@@ -14,6 +14,40 @@ CATEGORY_DICT = {
     "q-bio.PE ": "Populations and Evolution"
 }
 
+CATEGORY_DESCR = {
+    "cs.AI": "Covers all areas of AI except Vision, Robotics, Machine Learning,"
+             "Multiagent Systems, and Computation and Language (Natural Language Processing), "
+             "which have separate subject areas. In particular, includes Expert Systems, "
+             "Theorem Proving (although this may overlap with Logic in Computer Science), "
+             "Knowledge Representation, Planning, and Uncertainty in AI.",
+
+    "cs.CY": "Covers impact of computers on society, computer ethics, "
+             "information technology and public policy, legal aspects of computing, computers and education.",
+
+    "cs.DM": "Covers combinatorics, graph theory, applications of probability.",
+
+    "q-bio.TO": "Blood flow in vessels, biomechanics of bones, "
+                "electrical waves, endocrine system, tumor growth",
+
+    "econ.TH": "Includes theoretical contributions to Contract Theory, Decision Theory, "
+               "Game Theory, General Equilibrium, Growth, Learning and Evolution, "
+               "Macroeconomics, Market and Mechanism Design, and Social Choice.",
+
+    "eess.AS": "Theory and methods for processing signals representing audio, "
+               "speech, and language, and their applications. "
+               "This includes analysis, synthesis, enhancement, transformation, "
+               "classification and interpretation of such signals as well as the design, "
+               "development, and evaluation of associated signal processing systems. "
+               "Machine learning and pattern analysis applied to any of the above areas is also welcome.",
+
+    "q-bio.NC": "Synapse, cortex, neuronal dynamics, neural network, "
+                "sensorimotor control, behavior, attention",
+
+    "q-bio.PE ": "Population dynamics, spatio-temporal and epidemiological models, "
+                 "dynamic speciation, co-evolution, biodiversity, foodwebs, aging; "
+                 "molecular evolution and phylogeny; directed evolution; origin of life"
+}
+
 
 def create_set_for_category_dict(input_path, category_dict,
                                  single_cat_only=False,
