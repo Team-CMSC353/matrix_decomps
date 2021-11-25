@@ -3,6 +3,7 @@ core/resources/arxiv-metadata-oai-snapshot.json
 full_data_by_category.json
 full_data_by_category.json.bz2
 scripts/output/*.json
+tokenized_arxiv_subset_15540.pkl
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
