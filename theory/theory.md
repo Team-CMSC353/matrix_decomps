@@ -1,1 +1,0 @@
-folder for documents related to the theory part of the project (papers, presentations, textbooks)
