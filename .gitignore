@@ -1,4 +1,5 @@
 # large data resources
+core/resources/arvix_subset_15540.json
 core/resources/arxiv-metadata-oai-snapshot.json
 full_data_by_category.json
 full_data_by_category.json.bz2
