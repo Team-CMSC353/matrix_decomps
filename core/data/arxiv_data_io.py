@@ -128,9 +128,17 @@ def sample_arxiv_data_by_category(arxiv_df):
     :return: Tuple of DataFrames representing train and test data
     """
 
-    return train_test_split(arxiv_df, train_size=0.8,
-                            random_state=3020211120,
-                            stratify=arxiv_df["categories"])
+    sample_train, sample_test = train_test_split(arxiv_df, train_size=0.8,
+                                                random_state=3020211120,
+                                                stratify=arxiv_df["categories"])
+
+    sample_train['full_df_index'] = sample_train.index
+    sample_test['full_df_index'] = sample_test.index
+
+    sample_train.reset_index(inplace=True)
+    sample_test.reset_index(inplace=True)
+
+    return (sample_train, sample_test)
 
 
 # from https://www.kaggle.com/artgor/arxiv-metadata-exploration
