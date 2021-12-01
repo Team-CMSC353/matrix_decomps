@@ -135,8 +135,8 @@ def sample_arxiv_data_by_category(arxiv_df):
     sample_train['full_df_index'] = sample_train.index
     sample_test['full_df_index'] = sample_test.index
 
-    sample_train.reset_index(inplace=True)
-    sample_test.reset_index(inplace=True)
+    sample_train.reset_index(inplace=True,drop=True)
+    sample_test.reset_index(inplace=True,drop=True)
 
     return (sample_train, sample_test)
 
