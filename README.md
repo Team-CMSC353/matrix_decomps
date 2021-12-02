@@ -11,20 +11,21 @@ _Currently using python 3.9.7_
 4. (Optional) update dependencies `pip freeze > requirements.txt`
 
 ### Data
-The data is obtained from the [arXiv dataset](https://www.kaggle.com/Cornell-University/arxiv/notebooks)
+The data is obtained from the [Kaggle arXiv dataset](https://www.kaggle.com/Cornell-University/arxiv/notebooks).
 
-Our project specific data files can be downloaded #TODO-provide a link to a public folder
+Our project specific data files can be downloaded #TODO-provide a link to a public folder.
+If you instead wish to create the dataset, see the instructions [here](https://github.com/Team-CMSC353/matrix_decomps/blob/main/Data.md).
 
 ### Running the project
-We provide jupyter notebooks to view our analysis.
-The notebooks can be found [here](https://github.com/Team-CMSC353/matrix_decomps/tree/main/notebooks).
+We provide jupyter notebooks to view our analysis in the [notebooks folder](https://github.com/Team-CMSC353/matrix_decomps/tree/main/notebooks) of our repository.
 
 To run the notebooks interactively, clone the repository and set up the virtual environment.
+You will also need to download our tokenized as described [above] (#data).
+
 You can then start the jupyter notebook server using the following command `env/bin/jupyter-notebook`.
 
 **Below is a brief summary of the notebooks**:
 
 - **EDA - Full aXiv Data**: Basic summary of the 1.9M arXiv abstracts
 - **EDA - Subset Category arXiv Data**: Summary of 12K arXiv abstracts used in analysis
-
 
