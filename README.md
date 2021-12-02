@@ -16,7 +16,7 @@ The data is obtained from the [arXiv dataset](https://www.kaggle.com/Cornell-Uni
 Our project specific data files can be downloaded #TODO-provide a link to a public folder
 
 ### Running the project
-We provide jupyter notebooks view our analysis.
+We provide jupyter notebooks to view our analysis.
 The notebooks can be found [here](https://github.com/Team-CMSC353/matrix_decomps/tree/main/notebooks).
 
 To run the notebooks interactively, clone the repository and set up the virtual environment.
