@@ -20,9 +20,9 @@ If you instead wish to create the dataset, see the instructions [here](https://g
 We provide jupyter notebooks to view our analysis in the [notebooks folder](https://github.com/Team-CMSC353/matrix_decomps/tree/main/notebooks) of our repository.
 
 To run the notebooks interactively, clone the repository and set up the virtual environment.
-You will also need to download our tokenized as described [above] (#data).
+You will also need to download our tokenized data from #TODO-Link-above.
 
-You can then start the jupyter notebook server using the following command `env/bin/jupyter-notebook`.
+You can then start the jupyter notebook server using the following command `env/bin/jupyter-notebook`
 
 **Below is a brief summary of the notebooks**:
 
