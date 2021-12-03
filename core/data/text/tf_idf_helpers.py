@@ -17,7 +17,7 @@ def dummy_tokenizer(doc):
     return doc
 
 
-def fit_tfid(input_tokens,
+def fit_tfidf(input_tokens,
             dummy=dummy_tokenizer):
     """
     Function to fit a tfid vectorizer object to an iterable of tokens
@@ -41,7 +41,7 @@ def fit_tfid(input_tokens,
 
 
 
-def transform_tfid(input_df,
+def transform_tfidf(input_df,
                    tfidf_obj,
                    token_col_name='tokens',
                    doc_id_col_name='id'):
