@@ -28,4 +28,4 @@ You can then start the jupyter notebook server using the following command `env/
 
 - **EDA - Full aXiv Data**: Basic summary of the 1.9M arXiv abstracts
 - **EDA - Subset Category arXiv Data**: Summary of 12K arXiv abstracts used in analysis
-
+- **Analysis - NMF Topic Coherence**: Compute measure of coherehence for NMF components
