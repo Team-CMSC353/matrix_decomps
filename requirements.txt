@@ -17,6 +17,7 @@ defusedxml==0.7.1
 en-core-web-lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.2.0/en_core_web_lg-3.2.0-py3-none-any.whl
 entrypoints==0.3
 fonttools==4.28.1
+gensim==4.1.2
 idna==3.3
 ipykernel==6.5.1
 ipython==7.29.0

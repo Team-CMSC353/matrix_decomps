@@ -3,7 +3,6 @@ import os
 import pandas as pd
 
 
-
 def fix_scipy_svds(U, sigmas, V_T):
     r"""
     scipy.sparse.linalg.svds orders the singular values in increasing order.
@@ -18,7 +17,6 @@ def fix_scipy_svds(U, sigmas, V_T):
     U_nwq, sigmas_new, V_T_new
     ordered in decreasing singular values
     """
-
     sv_reordering = np.argsort(-sigmas)
 
     U_new = U[:, sv_reordering]
@@ -26,8 +24,6 @@ def fix_scipy_svds(U, sigmas, V_T):
     V_T_new = np.fliplr(V_T)
 
     return U_new, sigmas_new, V_T_new 
-
-
 
 
 def serialize_SVD(U, sigmas, V_T, file_names):
@@ -53,30 +49,19 @@ def compute_truncated_svd_recon_err(sigmas, k):
     """
     
     recon_error = np.sqrt((sigmas[k:]**2).sum())
-    #print('hello')
-    
+
     return recon_error
 
 
-
-def svd_k_search(input_U,input_sigmas, input_V_T, k_vals):
+def svd_k_search(input_U, input_sigmas, input_V_T, k_vals):
     """
     function for searching over different values of k
     """
-    
     results = []
     for kval in k_vals:
-
         re_err = compute_truncated_svd_recon_err(input_U, input_sigmas,
                                                  input_V_T, kval)
-
-
         entry = [kval, re_err]
-        
-        #print(entry)
-        
         results.append(entry)
-        
     results_df = pd.DataFrame(results, columns=['k', 'Reconstruction Error'])
-    
     return results_df
