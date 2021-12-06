@@ -9,6 +9,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # See documentation for scipy CSR sparse matrices
 # https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix
 
+
 def dummy_tokenizer(doc):
     """
     Dummy tokenizer to input into the TF-IDF Vectorizer function
