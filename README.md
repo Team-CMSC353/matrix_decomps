@@ -1,7 +1,7 @@
 # Applications of Matrix Factorizations for Unstructured Text
 
 ### Project Overview
-The analysis of unstructured text documents often produces high-dimensional, complex datasets. Matrix factorizations provide simple techniques for performing dimensionality reduction and extracting meaningful features from the original text. We explore two methods for matrix factorization, Principal Components Analysis (PCA) and Non-negative Matrix Factorization (NMF), and apply them to a corpus of arXiv abstracts.
+The analysis of unstructured text documents often produces high-dimensional, complex datasets. Matrix factorizations provide simple techniques for performing dimensionality reduction and extracting meaningful features from the original text. We explore two methods for matrix factorization, Singular Value Decomposition (SVD) and Non-negative Matrix Factorization (NMF), and apply them to a corpus of arXiv abstracts.
 ### Set up
 _Currently using python 3.9.7_
 1. Create virtual environment
