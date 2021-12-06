@@ -1,10 +1,12 @@
 # large data resources
 core/resources/arvix_subset_15540.json
 core/resources/arxiv-metadata-oai-snapshot.json
+core/resources/H_2299.pkl
+core/resources/W_2299.pkl
 full_data_by_category.json
 full_data_by_category.json.bz2
-scripts/output/*.json
 tokenized_arxiv_subset_15540.pkl
+scripts/output/*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
