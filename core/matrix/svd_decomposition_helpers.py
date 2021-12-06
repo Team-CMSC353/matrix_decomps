@@ -46,18 +46,13 @@ def serialize_SVD(U, sigmas, V_T, file_names):
 
 
 
-def compute_truncated_svd_recon_err(U, sigma, V_T, k):
+def compute_truncated_svd_recon_err(sigmas, k):
     """
-    Function that takes the svd of a matrix and a scalar k,
-    truncates the svd and returns the reconstruction error
+    Function that takes the singluar vals of a matrix and a scalar k,
+    and returns the reconstruction error for truncated svd with k=k
     """
     
-    U_k = U[:,:k]
-    sigma_k = np.diag(sigma)[:k,:k]
-    V_T_k = V_T[:k,:]
-    
-    X_k = U_k @ sigma_k @ V_T_k
-    recon_error = np.sqrt((sigma**2).sum() - (sigma[:k]**2).sum())
+    recon_error = np.sqrt((sigmas[k:]**2).sum())
     #print('hello')
     
     return recon_error
