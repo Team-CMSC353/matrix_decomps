@@ -23,6 +23,30 @@ def nmf_k_helper(input_matrix, kval,write_model_to_file=False):
     return entry
 
 
+def compute_nmf(k, A):
+    """"
+    A simple wrapper function for sklearn NMF
+    Instantiate NMF then factorize A into W and H
+
+    Input:
+        A: numpy.ndarray, matrix to factor
+        k: (int)
+
+    Returns:
+        nmf_model: NMF model instance
+        W: numpy.ndarray
+        H: numpy.ndarray
+    """
+    nmf_model = NMF(n_components=k,
+                    init='nndsvd',
+                    max_iter=1000,
+                    random_state=1)
+    W = nmf_model.fit_transform(A)
+    H = nmf_model.components_
+
+    return nmf_model, W, H
+
+
 def serialize_NMF(W, H, file_name):
     """
     function to serialize NMF output
@@ -72,3 +96,23 @@ def nmf_k_search(input_matrix, k_vals, serialize=False):
                                                 'Time to converge (secs)'])
     
     return results_df
+
+
+def generate_topics_from_NMF(H_matrix, index_to_word, top_n_words=15, print_out=False):
+    """
+    Create DataFrame where each row represents a "topic" from NMF
+    Number of words for topic given by top top_n_words
+
+    :param H_matrix: (numpy.ndarray) components matrix from NMF
+    :param index_to_word: (dict) with key (int) index, value (str) word
+    :param top_n_words: (int) number of words to show for given topic, def = 15
+    :param print_out: (boolean) print while building list, def = False
+    :return: pd.DataFrame of top_n_words terms for each topic
+    """
+    topic_list = []
+    for topic_idx, topic in enumerate(H_matrix):
+        top_n = [index_to_word[i] for i in topic.argsort()[-top_n_words:]][::-1]
+        topic_list.append([topic_idx, top_n])
+        if print_out:
+            print(f"Topic {topic_idx}:\n{top_n}\n")
+    return pd.DataFrame(topic_list, columns=["Topic", "Terms"])
