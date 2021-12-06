@@ -40,7 +40,6 @@ def fit_tfidf(input_tokens,
     return tfidf, index_to_word
 
 
-
 def transform_tfidf(input_df,
                    tfidf_obj,
                    token_col_name='tokens',
@@ -64,4 +63,3 @@ def transform_tfidf(input_df,
     tfidf_matrix = tfidf_obj.transform(input_df[token_col_name])
 
     return tfidf_matrix, index_to_doc_id
-

@@ -40,7 +40,6 @@ def serialize_NMF(W, H, file_name):
         assert np.array_equal(reloaded,mat)
 
 
-
 def nmf_k_search(input_matrix, k_vals, serialize=False):
     """
     function for searching over different values of k
