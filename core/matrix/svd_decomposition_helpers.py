@@ -59,8 +59,7 @@ def svd_k_search(input_U, input_sigmas, input_V_T, k_vals):
     """
     results = []
     for kval in k_vals:
-        re_err = compute_truncated_svd_recon_err(input_U, input_sigmas,
-                                                 input_V_T, kval)
+        re_err = compute_truncated_svd_recon_err(input_sigmas, kval)
         entry = [kval, re_err]
         results.append(entry)
     results_df = pd.DataFrame(results, columns=['k', 'Reconstruction Error'])
