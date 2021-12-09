@@ -1,6 +1,7 @@
 # large data resources
 core/resources/arvix_subset_15540.json
 core/resources/arxiv-metadata-oai-snapshot.json
+core/resources/tfidf_train_full_svd_V_T.pkl
 core/resources/H_2299.pkl
 core/resources/W_2299.pkl
 full_data_by_category.json
