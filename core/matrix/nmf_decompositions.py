@@ -1,9 +1,11 @@
 import os
-import numpy as np
-import scipy.sparse as sp
-import pandas as pd
-from sklearn.decomposition import NMF
 from time import time
+import numpy as np
+import pandas as pd
+import scipy.sparse as sp
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.decomposition import NMF
 
 
 def nmf_k_helper(input_matrix, kval,write_model_to_file=False):
@@ -116,3 +118,32 @@ def generate_topics_from_NMF(H_matrix, index_to_word, top_n_words=15, print_out=
         if print_out:
             print(f"Topic {topic_idx}:\n{top_n}\n")
     return pd.DataFrame(topic_list, columns=["Topic", "Terms"])
+
+
+def plot_top_words_with_weights_nmf(model_component, index_to_word, top_words=10):
+    """
+    Plot a horizontal bar chart
+    Cretes one plot per topic, where each bar represents a top_n term in the topic
+    The length of the bar is determined by its weight
+
+    Input:
+        :param model_component: (numpy.ndarray) components matrix from NMF
+        :param index_to_word: (dict) with key (int) index, value (str) word
+        :param top_n_words: (int) number of words to show for given topic, def = 15
+
+    Return:
+        NA, plot directly inline
+    """
+    for topic_idx, topic in enumerate(model_component):
+        topic_copy = topic.copy()
+        sorted_words = topic.argsort()[-top_words:][::-1]
+        topic_copy.sort()
+        topic_weights = topic_copy[-top_words:][::-1]
+        topic_data = [[index_to_word[sorted_words[i]], weight]
+                      for i, weight in enumerate(topic_weights)]
+        topic_data = pd.DataFrame(topic_data, columns=["Term", "Weight"])
+
+        plt.title(f'Top terms in NMF Topic {topic_idx}')
+        sns.barplot(y="Term", x="Weight", data=topic_data, orient='h')
+        plt.show()
+        plt.close()
