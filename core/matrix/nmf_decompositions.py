@@ -145,5 +145,6 @@ def plot_top_words_with_weights_nmf(model_component, index_to_word, top_words=10
 
         plt.title(f'Top terms in NMF Topic {topic_idx}')
         sns.barplot(y="Term", x="Weight", data=topic_data, orient='h')
+        plt.savefig(f"graphs/nmf_topic_{topic_idx}.jpeg", bbox_inches='tight')
         plt.show()
         plt.close()
